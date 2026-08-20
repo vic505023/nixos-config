@@ -73,7 +73,7 @@
     swaylock
     telegram-desktop
     adwaita-icon-theme
-    greetd.tuigreet
+    tuigreet
     figma-linux
     hyprpicker
     obsidian
@@ -90,9 +90,9 @@
       XCURSOR_SIZE = "24";
     };
 
-  systemd.user.extraConfig = ''
-      DefaultEnvironment="XCURSOR_THEME=Adwaita" "XCURSOR_SIZE=24"
-    '';
+  systemd.user.settings.Manager = {
+    DefaultEnvironment = "XCURSOR_THEME=Adwaita XCURSOR_SIZE=24";
+  };
 
   # environment.etc."foo".text = "..."; # создаст в папке etc файл в уоторый запишет ...
 
@@ -139,7 +139,7 @@
         enable = true;
         settings = {
           default_session = {
-            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd niri-session";
+            command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
           };
         };
       };

@@ -3,7 +3,7 @@
 
 
 	inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 	};
 
 	outputs = { nixpkgs, ... }: { # функция
